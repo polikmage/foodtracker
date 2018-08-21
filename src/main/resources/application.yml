@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: org.mpo.foodtracker
+  datasource:
+    driverClassName: org.h2.Driver
+    #url: jdbc:h2:tcp://localhost/~/mpodb
+    url: jdbc:h2:file:~/devdb
+    username: mpo
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+      path: /h2
+server:
+  port: 8080
+logging:
+  file: org.mpo.foodtracker.log
+  max-size: 10MB
+  max-history: 5
+  pattern:
+    console: "TID: [%d] %level [%thread] %logger{36} - %msg%n"
+    file: "TID: [%d] %level [%thread] %logger{36} - %msg%n"
+  level:
+    org.mpo.foodtracker: INFO
